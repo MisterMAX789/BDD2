@@ -25,7 +25,7 @@ class TransferTest {
     }
 
     @Test
-    void shouldTransferBetweenCards() {
+    void shouldTransferBegtweenCards() {
         var dashboardPage = new DashboardPage();
         var balanceFirstBefore = dashboardPage.getCardBalance(0);
         var balanceSecondBefore = dashboardPage.getCardBalance(1);
