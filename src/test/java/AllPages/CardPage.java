@@ -1,3 +1,6 @@
+package AllPages;
+
+import DataHelp.DataHelper;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -26,4 +29,3 @@ public class CardPage {
         return new DashboardPage();
     }
 }
-
