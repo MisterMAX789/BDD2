@@ -1,3 +1,4 @@
+import AllPages.CardPage;
 import AllPages.DashboardPage;
 import AllPages.LoginPage;
 import DataHelp.DataHelper;
@@ -25,7 +26,7 @@ class TransferTest {
     }
 
     @Test
-    void shouldTransferBegtweenCards() {
+    void shouldTransferBetweenCards() {
         var dashboardPage = new DashboardPage();
         var balanceFirstBefore = dashboardPage.getCardBalance(0);
         var balanceSecondBefore = dashboardPage.getCardBalance(1);
@@ -66,15 +67,13 @@ class TransferTest {
         assertEquals(balanceSecondAfter, dashboardPage.getCardBalance(1));
     }
     @Test
-    public void shouldTransferFtNegativeAmount() {
+    void shouldTransferOver() {
         var dashboardPage = new DashboardPage();
         var balanceFirstBefore = dashboardPage.getCardBalance(0);
-        var balanceSecondBefore = dashboardPage.getCardBalance(1);
-        var balanceFirstAfter = balanceFirstBefore - amount;
-        var balanceSecondAfter = balanceSecondBefore - amount;
-        var verificationFirstCard = DataHelper.getFirstCardsInfo(amount);
-        dashboardPage.personFirstCard().card(verificationFirstCard);
+        var balanceFirstAfter = balanceFirstBefore - amount;;
+        var verificationSecondCard = DataHelper.getSecondCardsInfo(amount);
+        CardPage.transferOverMax().card(verificationSecondCard);
         assertEquals(balanceFirstAfter, dashboardPage.getCardBalance(0));
-        assertEquals(balanceSecondAfter, dashboardPage.getCardBalance(1));
+
     }
 }

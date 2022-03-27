@@ -32,7 +32,6 @@ public class DashboardPage {
         val value = text.substring(start + balanceBefore.length(), finish);
         return Integer.parseInt(value);
     }
-
     public CardPage personFirstCard() {
         buttonFirst.click();
         return new CardPage();
