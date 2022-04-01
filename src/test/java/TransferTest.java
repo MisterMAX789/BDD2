@@ -65,7 +65,6 @@ class TransferTest {
 
         assertEquals(balanceFirstAfter, dashboardPage.getCardBalance(0));
         assertEquals(balanceSecondAfter, dashboardPage.getCardBalance(1));
-    ;
     }
 }
 
