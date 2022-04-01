@@ -1,6 +1,6 @@
-package AllPages;
+package allPages;
 
-import DataHelp.DataHelper;
+import dataHelp.DataHelper;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.visible;

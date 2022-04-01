@@ -1,4 +1,4 @@
-package DataHelp;
+package dataHelp;
 
 import lombok.Value;
 

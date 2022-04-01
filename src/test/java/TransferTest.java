@@ -1,7 +1,7 @@
-import AllPages.CardPage;
-import AllPages.DashboardPage;
-import AllPages.LoginPage;
-import DataHelp.DataHelper;
+import allPages.CardPage;
+import allPages.DashboardPage;
+import allPages.LoginPage;
+import dataHelp.DataHelper;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,26 +54,18 @@ class TransferTest {
     }
 
     @Test
-    void shouldTrnsferOverLimitNegative() {
+    void shouldTransferOverLimitNegative() {
         var dashboardPage = new DashboardPage();
         var balanceFirstBefore = dashboardPage.getCardBalance(0);
         var balanceSecondBefore = dashboardPage.getCardBalance(1);
-        var balanceFirstAfter = balanceFirstBefore - maxSum;
-        var balanceSecondAfter = balanceSecondBefore + maxSum;
+        var balanceFirstAfter = 10000 ;
+        var balanceSecondAfter = 10000;
         var verificationSecondCard = DataHelper.getSecondCardsInfo(maxSum);
         dashboardPage.personSecondCard().card(verificationSecondCard);
 
         assertEquals(balanceFirstAfter, dashboardPage.getCardBalance(0));
         assertEquals(balanceSecondAfter, dashboardPage.getCardBalance(1));
-    }
-    @Test
-    void shouldTransferOver() {
-        var dashboardPage = new DashboardPage();
-        var balanceFirstBefore = dashboardPage.getCardBalance(0);
-        var balanceFirstAfter = balanceFirstBefore - amount;;
-        var verificationSecondCard = DataHelper.getSecondCardsInfo(amount);
-        CardPage.transferOverMax().card(verificationSecondCard);
-        assertEquals(balanceFirstAfter, dashboardPage.getCardBalance(0));
-
+    ;
     }
 }
+
